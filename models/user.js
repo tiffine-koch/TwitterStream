@@ -10,8 +10,8 @@ var User;
 var userSchema = new mongoose.Schema({
   username: {type: String, unique: true, required: true},
   password: {type: String, required: true},
-  interests: [{type: String}]
-  // interests: [{type: mongoose.Schema.Types.ObjectId, ref: 'Tweets'}]
+  interests: [String]
+  // interests: {type: [String]}
 });
 
 userSchema.statics.authMiddleWare = function(req, res, next) {
